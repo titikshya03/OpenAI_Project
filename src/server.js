@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
-const { AzureOpenAI } = require('openai');
+const { AzureOpenAI } = require('^6.45.0');
 
 dotenv.config();
 
