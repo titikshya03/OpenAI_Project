@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const path = require('path');
 const cors = require('cors');
-const { AzureOpenAI } = require('^6.45.0');
+const { AzureOpenAI } = require('openai');
 
 dotenv.config();
 
@@ -29,10 +29,6 @@ app.use(cors({
 
 // Serve frontend
 app.use(express.static(path.join(__dirname, '../public')));
-
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../public/index.html'));
-});
 
 // Azure OpenAI Client
 const client = new AzureOpenAI({
@@ -103,10 +99,10 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
-module.exports = app;
-
-if (require.main === module) {
+if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, () => {
         console.log(`🍳 MasterChef AI running at http://localhost:${PORT}`);
     });
 }
+
+module.exports = app;
