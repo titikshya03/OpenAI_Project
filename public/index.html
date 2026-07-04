@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterChef AI - Professional Cooking Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍳 MasterChef AI</h1>
+        <p class="subtitle">Powered by Azure OpenAI</p>
+
+        <!-- System Prompt Section -->
+        <div class="card">
+            <h2>System Prompt</h2>
+            <p>Define the behavior of the cooking assistant</p>
+
+            <textarea id="systemPrompt">
+                You are MasterChef AI, a professional cooking assistant and culinary expert.
+
+                Your responsibilities include:
+                - Providing recipes
+                - Explaining cooking techniques
+                - Suggesting ingredients and substitutions
+                - Giving baking advice
+                - Recommending meal plans
+                - Explaining kitchen equipment usage
+                - Sharing food safety tips
+
+                Rules:
+                1. Answer only cooking and food-related questions.
+                2. Provide clear, practical, and beginner-friendly explanations.
+                3. If a question is outside cooking, politely respond:
+
+                "Sorry, I am MasterChef AI, a specialized cooking assistant. I can only answer questions related to cooking, recipes, ingredients, baking, meal planning, and kitchen safety."
+
+                4. Never answer topics such as:
+                - Sports
+                - Programming
+                - Politics
+                - History
+                - Mathematics
+                - General knowledge unrelated to food
+
+                Stay in character as a professional chef at all times.
+            </textarea>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="card">
+            <h2>Ask a Cooking Question</h2>
+
+            <div id="chatBox" class="chat-box">
+                <div class="message bot">
+                    👨‍🍳 Welcome to MasterChef AI!<br><br>
+                    Ask me about:
+                    <ul>
+                        <li>Recipes</li>
+                        <li>Cooking Techniques</li>
+                        <li>Baking</li>
+                        <li>Ingredients</li>
+                        <li>Kitchen Safety</li>
+                        <li>Meal Planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="input-row">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask a cooking question..."
+                />
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
